@@ -1025,7 +1025,7 @@ const colInput=$('#colW'); colInput.value=colW;
 colInput.addEventListener('change',()=>{ const v=Math.min(1200,Math.max(360,parseInt(colInput.value,10)||530)); colInput.value=v; colW=v; try{localStorage.setItem(KEY+'-colw',v);}catch(e){} placeFrames(); renderPreview(); });
 
 /* ===== 彈窗 ===== */
-function openM(id){ $(id).hidden=false; const f=$(id).querySelector('textarea:not([readonly]),.btn.primary'); f&&f.focus(); }
+function openM(id){ closeAll(); $(id).hidden=false; const f=$(id).querySelector('textarea:not([readonly]),.btn.primary'); f&&f.focus(); }
 function closeAll(){ document.querySelectorAll('.overlay').forEach(o=>o.hidden=true); }
 document.querySelectorAll('.overlay').forEach(o=>{ o.addEventListener('click',e=>{ if(e.target===o||e.target.closest('[data-close]')) closeAll(); }); });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeAll(); });
