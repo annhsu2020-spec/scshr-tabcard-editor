@@ -365,7 +365,7 @@ const CSS = `  .tw-widget-wrapper {
     border: 1px solid #eef0f3;
     border-radius: 9px;
   }
-  .tw-cell strong { display: block; color: #374151; font-size: 13px; margin-bottom: 0px; line-height: 14px;}
+  .tw-cell strong { display: block; color: #374151; font-size: 14px; margin-bottom: 0px; line-height: 14px;}
   .tw-cell span { color: #7b8491; font-size: 12px; line-height: 14px; }
 
   /* --- 摘要區塊 --- */
@@ -393,7 +393,7 @@ const CSS = `  .tw-widget-wrapper {
     font-weight: 700;
     color: #9ca3af;
     letter-spacing: .04em;
-    margin: 5px 0 0px 0;
+    margin: 8px 0 0px 0;
     padding: 2px 0px;
     flex-shrink: 0;
   }
@@ -411,11 +411,11 @@ const CSS = `  .tw-widget-wrapper {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    padding: 2px 2px;
+    padding: 5px 2px;
     text-decoration: none;
     color: #374151;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 14.5px;
+    line-height: 1.6;
     transition: color .2s, background-color .2s;
   }
   .tw-list a:hover { color: #2563eb; background-color: #f9fbff; }
@@ -433,10 +433,11 @@ const CSS = `  .tw-widget-wrapper {
   /* --- 底部按鈕區 --- */
   .tw-widget-footer {
     text-align: center;
-    padding-top: 14px;
-    border-top: 1px solid #ddd;
+    padding-top: 0px;
+    border-top: 0px solid #ddd;
     margin-top: auto;
     flex-shrink: 0;
+	margin-bottom: 20px;
   }
   .tw-widget-btn {
     display: inline-block;
@@ -457,6 +458,7 @@ const CSS = `  .tw-widget-wrapper {
     font-size: 13px;
     color: #9ca3af;
     text-decoration: none;
+	
   }
   .tw-widget-footer .tw-sub-link:hover { color: #2563eb; }
 
@@ -480,6 +482,20 @@ const CSS = `  .tw-widget-wrapper {
     .tw-grid3 { grid-template-columns: 1fr; }
     .tw-cell { display: flex; align-items: baseline; gap: 8px; text-align: left; padding: 8px 12px; }
     .tw-cell strong { margin-bottom: 0; }
+	
+	
+   .tw-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 5px 2px;
+    text-decoration: none;
+    color: #374151;
+    font-size: 13px;
+    line-height: 1.5;
+    transition: color .2s, background-color .2s;
+  }
   }
 
   @media (min-width: 768px) {
@@ -531,8 +547,8 @@ const CSS = `  .tw-widget-wrapper {
 
   /* 婚假法規卡：獨立樣式，內容超出時可捲動，保留來源按鈕 */
   .tw-widget-wrapper .tw-marriage-update .tw-eyebrow { flex-wrap: wrap; gap: 4px 10px; }
-  .tw-widget-wrapper .tw-marriage-note { margin: 6px 0 0; padding: 0; font-size: 12px; line-height: 1.6; color: #92400e; flex-shrink: 0; }
-  .tw-widget-wrapper .tw-marriage-details { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding-right: 4px; touch-action: pan-y; }
+  .tw-widget-wrapper .tw-marriage-note { margin: 0px 0 0; padding: 0; font-size: 12px; line-height: 1.6; color: #cf8200; flex-shrink: 0; }
+  .tw-widget-wrapper .tw-marriage-details { flex: 1 1 auto; min-height: 0; overflow-y: auto; padding-right: 4px; touch-action: pan-y;     border-bottom: 1px solid #eee;}
   .tw-widget-wrapper .tw-marriage-details:focus-visible { outline: 2px solid #2563eb; outline-offset: -2px; }
   .tw-widget-wrapper .tw-marriage-update .tw-widget-summary { margin-top: 8px; padding: 10px 12px; }
   .tw-widget-wrapper .tw-marriage-update .tw-widget-summary p { margin: 0 0 5px; }
@@ -686,9 +702,9 @@ const DEFAULTS = {tabs:[
   gridHead:'企業三步驟自查',
   cells:[{t:'書面政策',d:'已納入工作規則'},{t:'申訴管道',d:'指定受理窗口'},{t:'處理紀錄',d:'調查全程留存'}],
   listHead:'其他熱門提問',
-  list:[{text:'什麼是職場霸凌管理系統？企業為什麼需要導入？',meta:'',href:'https://www.scshr.com/employee-relations/'},
-        {text:'收到職場霸凌申訴後，企業需要處理哪些流程？',meta:'',href:'https://www.scshr.com/employee-relations/'},
-        {text:'職場霸凌申訴可以匿名提出嗎？',meta:'',href:'https://www.scshr.com/employee-relations/'}],
+  list:[{text:'什麼是職場霸凌管理系統？企業為什麼需要導入？',href:'https://www.scshr.com/employee-relations/'},
+        {text:'收到職場霸凌申訴後，企業需要處理哪些流程？',href:'https://www.scshr.com/employee-relations/'},
+        {text:'職場霸凌申訴可以匿名提出嗎？',href:'https://www.scshr.com/employee-relations/'}],
   btnText:'查看解決方案 — WGS 職場治理平台', btnHref:'https://www.scshr.com/employee-relations/', btnNewWin:false, subText:'', subHref:''},
  {tab:'最新法規', tag:'2026.09.18 更新', status:'修正草案預告', statusSoon:true,
   title:'婚假擬增至 14 日｜預定 10 月 1 日上路',
@@ -697,50 +713,50 @@ const DEFAULTS = {tabs:[
   bullets:[{label:'日數增加',text:'婚假擬由 8 日增至 14 日，休假期間工資照給。'},
            {label:'過渡適用',text:'上路前已登記結婚者，須仍在可請假期間內，且原 8 日尚未休完，才適用增加日數。'},
            {label:'工資補助',text:'新增第 9～14 日工資，規劃由雇主先給付後申請補助；辦法及流程待公布。'}],
-  period:'可請假期間：結婚登記日前 10 日起 3 個月內；經雇主同意，可延長至 1 年內。',
   prepHead:'HR 可先準備', prepText:'盤點婚假餘額、請休期限及系統設定，待正式發布後調整制度與補助作業。',
   btnText:'查看勞動部公告 ↗', btnHref:'https://www.mol.gov.tw/1607/1632/1633/99111/post', btnNewWin:true,
-  subText:'更多法令相關文章 ›', subHref:'https://www.scshr.com/scsfocus/scslaws/'},
+  subText:'', subHref:''},
  {tab:'HR 法遵健檢', tag:'【企業 HR 法遵健檢】', status:'免費初步評估', statusSoon:false,
   heroEyebrow:'制度與系統設定盤點', heroNum:'5', heroTitle:'大項目快速檢查', heroDesc:'找出出勤、排班、薪資與申訴制度的潛在法遵缺口。',
   gridHead:'優先檢查範圍',
   cells:[{t:'工時出勤',d:'紀錄與加班一致'},{t:'排班休假',d:'班表規則合規'},{t:'薪資給付',d:'扣款計算正確'}],
   listHead:'企業法遵檢查重點',
-  list:[{text:'出勤紀錄、加班申請與加班費計算是否一致',meta:'工時與薪資',href:'https://www.scshr.com/business-consulting/'},
-        {text:'排班、例假、請假與全勤獎金規則是否正確',meta:'排班與請假',href:'https://www.scshr.com/business-consulting/'},
-        {text:'職場霸凌申訴、調查與紀錄機制是否建置',meta:'職場治理',href:'https://www.scshr.com/business-consulting/'}],
+  list:[{text:'出勤紀錄、加班申請與加班費計算是否一致',href:'https://www.scshr.com/business-consulting/'},
+        {text:'排班、例假、請假與全勤獎金規則是否正確',href:'https://www.scshr.com/business-consulting/'},
+        {text:'職場霸凌申訴、調查與紀錄機制是否建置',href:'https://www.scshr.com/business-consulting/'}],
   btnText:'預約顧問進行 HR 法遵評估', btnHref:'https://www.scshr.com/business-consulting/', btnNewWin:false, subText:'', subHref:''}
 ]};
 
 /* ===== 欄位定義 ===== */
 const F = (k,label,o)=>Object.assign({k,label},o||{});
 const HEAD = [F('tab','頁籤名稱（桌面頁籤＋手機卡片標題）',{max:8,req:1}),F('tag','左側標籤',{max:12,req:1}),F('status','右側狀態文字',{max:10}),F('statusSoon','狀態圓點改為橘色（預告、即將上路）',{type:'check'})];
+const FOOT_BTN = [F('btnText','按鈕文字',{max:20,req:1}),F('btnHref','按鈕連結',{type:'url',req:1})];
 const FOOT = [F('btnText','按鈕文字',{max:20,req:1}),F('btnHref','按鈕連結',{type:'url',req:1}),F('btnNewWin','按鈕以新分頁開啟',{type:'check'}),F('subText','按鈕下方小連結文字（可留空）',{max:16}),F('subHref','小連結網址',{type:'url',reqIf:'subText'})];
 const SCHEMA = {
  qa:[{title:'頁籤與標籤',fields:HEAD},
      {title:'問與答',fields:[F('title','問題標題',{type:'area',max:44,req:1}),F('body','回答說明',{type:'area',max:90})]},
      {title:'三格自查',fields:[F('gridHead','區塊小標',{max:12})],rep:'cells'},
      {title:'延伸清單',fields:[F('listHead','區塊小標',{max:12})],rep:'list'},
-     {title:'底部按鈕',fields:FOOT}],
+     {title:'底部按鈕',fields:FOOT_BTN}],
  law:[{title:'頁籤與標籤',fields:HEAD},
       {title:'法規標題',fields:[F('title','標題',{type:'area',max:30,req:1}),F('note','標題下方說明（橘字）',{type:'area',max:50})]},
       {title:'重點摘要（藍框）',fields:[F('summaryTitle','摘要標題',{max:14})],rep:'bullets'},
-      {title:'補充說明',fields:[F('period','灰色補充文字',{type:'area',max:50}),F('prepHead','小標',{max:12}),F('prepText','內文',{type:'area',max:60})]},
-      {title:'底部按鈕',fields:FOOT}],
+      {title:'補充說明',fields:[F('prepHead','小標',{max:12}),F('prepText','內文',{type:'area',max:60})]},
+      {title:'底部按鈕',fields:FOOT_BTN}],
  check:[{title:'頁籤與標籤',fields:HEAD},
         {title:'主視覺方塊',fields:[F('heroEyebrow','上方灰字',{max:14}),F('heroNum','大數字',{max:3}),F('heroTitle','數字後標題',{max:10,req:1}),F('heroDesc','說明',{type:'area',max:32})]},
         {title:'三格重點',fields:[F('gridHead','區塊小標',{max:12})],rep:'cells'},
         {title:'延伸清單',fields:[F('listHead','區塊小標',{max:12})],rep:'list'},
-        {title:'底部按鈕',fields:FOOT}]
+        {title:'底部按鈕',fields:FOOT_BTN}]
 };
 const REP = {
  cells:{fixed:3, item:'格', fields:[F('t','標題',{max:6,req:1}),F('d','說明',{max:9})]},
- list:{max:3, min:1, item:'項目', fields:[F('text','問題／項目文字',{max:28,req:1}),F('meta','灰色副標（可留空）',{max:8}),F('href','連結',{type:'url',req:1})], blank:{text:'',meta:'',href:''}},
+ list:{max:3, min:1, item:'項目', fields:[F('text','問題／項目文字',{max:28,req:1}),F('href','連結',{type:'url',req:1})], blank:{text:'',href:''}},
  bullets:{max:3, min:1, item:'重點', fields:[F('label','粗體標籤',{max:6}),F('text','內容',{type:'area',max:48,req:1})], blank:{label:'',text:''}}
 };
 
 /* ===== 狀態 ===== */
-const KEY = 'scshr-tabcard-editor-v1';
+const KEY = 'scshr-tabcard-editor-v2';
 const clone = o=>JSON.parse(JSON.stringify(o));
 let state = clone(DEFAULTS);
 try{ const s = localStorage.getItem(KEY); if(s){ const p = JSON.parse(s); if(p && p.tabs && p.tabs.length===3) state = p; } }catch(e){}
@@ -786,11 +802,11 @@ function statusHTML(c){ return '<span class="tw-status'+(c.statusSoon?' is-soon'
 function mobileTitle(i,c){ return '      <div class="tw-widget-mobile-title">\n        '+MOBILE_ICONS[i]+'\n        '+esc(c.tab)+'\n      </div>\n'; }
 function eyebrow(c,tagCls){ return '      <div class="tw-eyebrow">\n        <span class="tw-tag '+tagCls+'">'+esc(c.tag)+'</span>\n        '+(String(c.status).trim()?statusHTML(c):'<span></span>')+'\n      </div>\n'; }
 function cells(c){ return '      <div class="tw-grid3">\n'+c.cells.map(x=>'        <div class="tw-cell"><strong>'+esc(x.t)+'</strong><span>'+esc(x.d)+'</span></div>\n').join('')+'      </div>\n'; }
-function listHTML(c){ return '      <ul class="tw-list">\n'+c.list.map(x=>'        <li><a '+la(x.href,false)+'>\n          <span class="tw-li-text">'+esc(x.text)+'\n            <span class="tw-li-meta">'+esc(x.meta)+'</span></span>\n          <span class="tw-li-arrow">›</span></a></li>\n').join('')+'      </ul>\n'; }
+function listHTML(c){ return '      <ul class="tw-list">\n'+c.list.map(x=>'        <li><a '+la(x.href,true)+'>\n          <span class="tw-li-text">'+esc(x.text)+'</span>\n          </a></li>\n').join('')+'      </ul>\n'; }
 function head(t){ return String(t||'').trim()?'      <p class="tw-list-head">'+esc(t)+'</p>\n':''; }
-function footer(c,cls,style){
-  let a='        <a '+la(c.btnHref,c.btnNewWin)+' class="tw-widget-btn '+cls+'"'+(style?' style="'+style+'"':'')+'>'+esc(c.btnText)+'</a>\n';
-  if(String(c.subText).trim()) a+='        <a '+la(c.subHref,false)+' class="tw-sub-link">'+esc(c.subText)+'</a>\n';
+function footer(c,cls,style,noSub){
+  let a='        <a '+la(c.btnHref,true)+' class="tw-widget-btn '+cls+'"'+(style?' style="'+style+'"':'')+'>'+esc(c.btnText)+'</a>\n';
+  if(!noSub && String(c.subText).trim()) a+='        <a '+la(c.subHref,false)+' class="tw-sub-link">'+esc(c.subText)+'</a>\n';
   return '      <div class="tw-widget-footer">\n'+a+'      </div>\n';
 }
 function genQA(c){
@@ -798,7 +814,7 @@ function genQA(c){
    +'      <h4 class="tw-widget-h4" style="color:#ff5a5f;">'+esc(c.title)+'</h4>\n'
    +(String(c.body).trim()?'      <p class="tw-widget-p">'+esc(c.body)+'</p>\n':'')+'\n'
    +head(c.gridHead)+cells(c)+'\n'+head(c.listHead)+listHTML(c)+'\n'
-   +footer(c,'tw-widget-btn-outline','background:#fff6f6;')+'    </div>\n';
+   +footer(c,'tw-widget-btn-outline','background:#fff6f6;',true)+'    </div>\n';
 }
 function genLaw(c){
   const lbl = String(c.summaryTitle||c.title).trim();
@@ -810,28 +826,27 @@ function genLaw(c){
    +(String(c.summaryTitle).trim()?'          <p>'+esc(c.summaryTitle)+'</p>\n':'')
    +'          <ul>\n'+c.bullets.map(b=>'            <li>'+(String(b.label).trim()?'<strong>'+esc(b.label)+'：</strong>':'')+esc(b.text)+'</li>\n').join('')+'          </ul>\n'
    +'        </div>\n'
-   +(String(c.period).trim()?'        <p class="tw-marriage-period">'+esc(c.period)+'</p>\n':'')
    +(String(c.prepHead).trim()?'        <p class="tw-list-head">'+esc(c.prepHead)+'</p>\n':'')
    +(String(c.prepText).trim()?'        <p class="tw-widget-p">'+esc(c.prepText)+'</p>\n':'')
    +'      </div>\n'
-   +footer(c,'tw-widget-btn-solid','')+'    </div>\n';
+   +footer(c,'tw-widget-btn-solid','',true)+'    </div>\n';
 }
 function genCheck(c){
   return '    <!-- 卡片 3 -->\n    <div class="tw-widget-card card-yellow">\n'+mobileTitle(2,c)+'\n'+eyebrow(c,'tw-tag-amber')+'\n'
-   +'      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px 17px;margin-bottom:12px;background:linear-gradient(135deg,#fffaf0 0%,#fff4d6 100%);border:1px solid #fde7a8;border-radius:12px;flex-shrink:0;">\n'
+   +'      <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 17px;margin-bottom:0px;background:linear-gradient(135deg,#fffaf0 0%,#fff4d6 100%);border:1px solid #fde7a8;border-radius:12px;flex-shrink:0;">\n'
    +'        <div style="min-width:0;">\n'
-   +'          <div style="color:#6b7280;font-size:13px;font-weight:700;margin-bottom:2px;">'+esc(c.heroEyebrow)+'</div>\n'
-   +'          <h4 style="margin:0;color:#263e68;font-size:19px;line-height:1.35;font-weight:800;">\n'
+   +'          <div style="color:#6b7280;font-size:13px;font-weight:700;margin-bottom:0px;">'+esc(c.heroEyebrow)+'</div>\n'
+   +'          <h4 style="margin:0;color:#263e68;font-size:18px;line-height:1.15;font-weight:800;">\n'
    +(String(c.heroNum).trim()?'            <span style="color:#e59a00;font-size:31px;font-weight:900;letter-spacing:-1px;">'+esc(c.heroNum)+'</span> ':'            ')+esc(c.heroTitle)+'\n'
    +'          </h4>\n'
-   +(String(c.heroDesc).trim()?'          <p style="margin:5px 0 0;color:#6b7280;font-size:13px;line-height:1.5;">'+esc(c.heroDesc)+'</p>\n':'')
+   +(String(c.heroDesc).trim()?'          <p style="margin:0px 0 0;color:#6b7280;font-size:13px;line-height:1.5;">'+esc(c.heroDesc)+'</p>\n':'')
    +'        </div>\n'
    +'        <div style="flex:0 0 68px;width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ffffff;border:1px solid #fde7a8;box-shadow:0 6px 14px rgba(217,119,6,.10);">\n'
    +'          <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#e59a00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">\n'
    +'            <path d="M9 11l2 2 4-4"></path>\n            <path d="M12 3l7 3v5c0 4.6-2.9 8-7 10-4.1-2-7-5.4-7-10V6l7-3z"></path>\n          </svg>\n'
    +'        </div>\n      </div>\n\n'
    +head(c.gridHead)+cells(c)+'\n'+head(c.listHead)+listHTML(c)+'\n'
-   +footer(c,'tw-widget-btn-outline','background:#fff9e8;border-color:#fde7a8;color:#9a6700;')+'    </div>\n';
+   +footer(c,'tw-widget-btn-outline','background:#fff9e8;border-color:#fde7a8;color:#9a6700;',true)+'    </div>\n';
 }
 function gen(){
   const t=state.tabs; const SC='</'+'script>';
@@ -979,7 +994,7 @@ function renderForm(){
         h+='</div>';
         const fs=r.fields.map(f=>fieldHTML(sec.rep+'.'+n+'.'+f.k,f));
         if(sec.rep==='cells') h+='<div class="row2">'+fs.join('')+'</div>';
-        else if(sec.rep==='list') h+=fs[0]+'<div class="row2">'+fs[1]+fs[2]+'</div>';
+        else if(sec.rep==='list') h+=fs.join('');
         else h+=fs.join('');
         h+='</div>';
       });
@@ -1077,7 +1092,7 @@ function parseCode(str){
     const sub=card.querySelector('.tw-widget-footer .tw-sub-link'); c.subText=T(sub); c.subHref=A(sub,'href');
   };
   const parseCells=card=>[...card.querySelectorAll('.tw-grid3 .tw-cell')].slice(0,3).map(x=>({t:T(x.querySelector('strong')),d:T(x.querySelector('span'))}));
-  const parseList=card=>[...card.querySelectorAll('.tw-list li')].slice(0,5).map(li=>{ const a=li.querySelector('a'); const tx=li.querySelector('.tw-li-text'); let text=''; if(tx){ const k=tx.cloneNode(true); k.querySelectorAll('.tw-li-meta').forEach(m=>m.remove()); text=T(k);} return {text,meta:T(li.querySelector('.tw-li-meta')),href:A(a,'href')}; });
+  const parseList=card=>[...card.querySelectorAll('.tw-list li')].slice(0,5).map(li=>{ const a=li.querySelector('a'); const tx=li.querySelector('.tw-li-text'); let text=''; if(tx){ const k=tx.cloneNode(true); k.querySelectorAll('.tw-li-meta').forEach(m=>m.remove()); text=T(k);} return {text,href:A(a,'href')}; });
   const heads=card=>[...card.querySelectorAll(':scope > .tw-list-head')];
   const pad3=arr=>{ while(arr.length<3) arr.push({t:'',d:''}); return arr; };
   // 卡片 1
@@ -1090,7 +1105,6 @@ function parseCode(str){
   c.summaryTitle=T(card.querySelector('.tw-widget-summary > p'));
   c.bullets=[...card.querySelectorAll('.tw-widget-summary li')].slice(0,4).map(li=>{ const k=li.cloneNode(true); const st=k.querySelector('strong'); const label=st?T(st).replace(/[：:]\s*$/,''):''; if(st) st.remove(); return {label,text:T(k)}; });
   if(!c.bullets.length) c.bullets=[clone(REP.bullets.blank)];
-  c.period=T(card.querySelector('.tw-marriage-period'));
   c.prepHead=T(card.querySelector('.tw-marriage-details > .tw-list-head')); c.prepText=T(card.querySelector('.tw-marriage-details > .tw-widget-p'));
   // 卡片 3
   c=s.tabs[2]; card=cards[2]; common(card,c,2);
